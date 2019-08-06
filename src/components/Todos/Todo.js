@@ -16,7 +16,12 @@ export class Todo extends Component {
     return (
       <div style={this.getStyle()}>
         <p>
-          <input type="checkbox" onChange={markCompleted.bind(this, todo.id)} /> {todo.title}
+          <input
+            type="checkbox"
+            checked={todo.completed}
+            onChange={markCompleted.bind(this, todo.id)}
+          />{' '}
+          {todo.title}
           <button onClick={delTodo.bind(this, todo.id)} style={btnStyle}>
             X
           </button>
